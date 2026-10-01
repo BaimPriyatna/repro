@@ -96,6 +96,8 @@ follow the format of existing files (context, decision, consequences).
 | 0011 | Explanation Layer |
 | 0012 | ManualTrace Workflow Intelligence |
 | 0013 | CLI Integration Track |
+| 0014 | Shared CLI Flags & Exit Codes |
+| 0015 | Central Store & Project Cemetery |
 
 ## Versioning
 
