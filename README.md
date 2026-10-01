@@ -233,4 +233,4 @@ Bug reports and improvements are welcome. Start with
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Apache License 2.0 — see [LICENSE](LICENSE).
