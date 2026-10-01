@@ -1,0 +1,21 @@
+# Build artifacts
+bin/
+coverage.out
+*.test
+*.test.exe
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Go workspace
+go.work
+go.work.sum
+
+# Local-only development docs
+DEVELOPMENT-SPEC.md
+ROADMAP.md

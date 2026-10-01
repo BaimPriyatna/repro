@@ -1,0 +1,38 @@
+run:
+  timeout: 5m
+  go: "1.24"
+
+linters:
+  enable:
+    - errcheck       # unchecked errors
+    - gosimple       # simplification suggestions
+    - govet          # go vet checks
+    - ineffassign    # ineffectual assignments
+    - staticcheck    # SA/S/ST checks
+    - unused         # unused code
+    - gofmt          # formatting
+    - goimports      # import ordering
+    - misspell       # spelling errors in comments
+    - revive         # opinionated linter (replaces golint)
+    - gosec          # security checks
+    - bodyclose      # http response body close
+    - noctx          # http requests without context
+    - godot          # comment punctuation
+
+linters-settings:
+  revive:
+    rules:
+      - name: exported
+        severity: warning
+      - name: error-return
+        severity: warning
+  gosec:
+    excludes:
+      - G304 # file inclusion via variable — we intentionally open caller-supplied paths
+
+issues:
+  exclude-rules:
+    - path: "_test\\.go"
+      linters:
+        - gosec
+        - errcheck

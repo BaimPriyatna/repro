@@ -1,0 +1,48 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2026-10-01
+
+### Added
+
+- Core domain types: Snapshot, Event, Entity, Relation, AnalysisResult,
+  DiagnosticEvidence, structured errors (`src/core/*`)
+- Snapshot Engine: collectors (OS, runtime, env, git), normalizer, hasher,
+  mem/file stores, capture / store / load / list / compare (`src/engine/*`)
+- Event system: mem/file stores, query model, high-level `System` service
+- Capture modules: Repro, TimeCapsule, Watchdog (`src/capture/*`)
+- Diff & history infrastructure and analyzers: BeforeAfter, Drift, Absent,
+  ChangeMap (`src/analysis/*`)
+- Dependency & usage graph: Depspy, RepairMap (`src/graph/*`)
+- Impact & lifecycle analyzers: Impact, DeadConfig, Orphan, GhostFile
+- WhyBroken root-cause analyzer
+- ConfigMerge configuration operation (`src/operations/configmerge`)
+- Explanation layer: ExplainDiff → HumanReadable (`src/presentation/*`)
+- ManualTrace workflow intelligence (`src/intelligence/manualtrace`)
+- Complete CLI with all module subcommands: capture, snapshot, diff, history,
+  drift, absent, change-map, why-broken, deps, repair-map, impact, dead-config,
+  orphan, config-merge, ghost-file, explain-diff, human-readable, manual-trace
+  (`internal/cli/`)
+- Central store with multi-project support and anchor chain resolution
+  (`src/central/*`)
+- Project lifecycle tracking: active / idle / dormant / abandoned / archived
+  status with configurable thresholds
+- Project management commands: init, add, list, status, stats, cemetery,
+  archive, unarchive, forget, set-threshold, migrate-to-central
+- Shared CLI flags: --format (human/json), -o/--output, --data-dir, --local
+- Standalone mode support for CI/ephemeral environments
+- Base config (`internal/config`)
+- CI workflow (build, `go test -race`, golangci-lint)
+- Public documentation suite: `ARCHITECTURE.md`, `CONTRIBUTING.md`,
+  `CODE_OF_CONDUCT.md`, `SECURITY.md`, `ERROR-CODES.md`, `EXAMPLES.md`,
+  GitHub issue/PR templates
+- MIT `LICENSE`
+- ADRs 0001–0015 under `docs/adr/`
+
+### Notes
+
+- v1.0.0 is the initial release with full library, CLI, and storage functionality.

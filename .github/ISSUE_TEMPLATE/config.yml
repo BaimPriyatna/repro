@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/BaimPriyatna/repro/security/advisories/new
+    about: Please report security issues privately — see SECURITY.md
+  - name: Architecture & examples
+    url: https://github.com/BaimPriyatna/repro/blob/main/ARCHITECTURE.md
+    about: Check ARCHITECTURE.md and EXAMPLES.md before opening a usage question
