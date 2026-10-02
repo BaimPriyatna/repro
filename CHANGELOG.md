@@ -40,7 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Public documentation suite: `ARCHITECTURE.md`, `CONTRIBUTING.md`,
   `CODE_OF_CONDUCT.md`, `SECURITY.md`, `ERROR-CODES.md`, `EXAMPLES.md`,
   GitHub issue/PR templates
-- MIT `LICENSE`
+- Apache License 2.0 `LICENSE`
 - ADRs 0001–0015 under `docs/adr/`
 
 ### Notes
