@@ -8,7 +8,7 @@
   <a href="https://github.com/BaimPriyatna/repro/actions/workflows/ci.yml"><img src="https://github.com/BaimPriyatna/repro/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache 2.0"></a>
   <a href="go.mod"><img src="https://img.shields.io/badge/go-%3E%3D1.24-00ADD8.svg" alt="Go 1.24+"></a>
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.1.1-informational.svg" alt="Version"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.1.2-informational.svg" alt="Version"></a>
   <img src="https://img.shields.io/badge/local--first-yes-success.svg" alt="Local-first">
 </p>
 
