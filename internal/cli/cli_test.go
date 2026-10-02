@@ -403,6 +403,23 @@ func TestCLI_ManualTrace(t *testing.T) {
 func TestCLI_CentralStoreCommands(t *testing.T) {
 	tmpDir := t.TempDir()
 	dataDir := filepath.Join(tmpDir, "central")
+	projectDir := filepath.Join(tmpDir, "project")
+	if err := os.MkdirAll(projectDir, 0o750); err != nil {
+		t.Fatalf("mkdir project dir: %v", err)
+	}
+
+	// init/list/status/cemetery resolve project identity from the process
+	// working directory, not --data-dir, so it must point at a temp dir
+	// rather than the test binary's real cwd.
+	origDir, err := os.Getwd()
+	if err != nil {
+		t.Fatalf("getwd: %v", err)
+	}
+	if err := os.Chdir(projectDir); err != nil {
+		t.Fatalf("chdir: %v", err)
+	}
+	t.Cleanup(func() { _ = os.Chdir(origDir) })
+
 	cmd := RootCommand()
 
 	// 1. init

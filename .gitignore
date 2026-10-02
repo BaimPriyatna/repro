@@ -19,3 +19,6 @@ go.work.sum
 # Local-only development docs
 DEVELOPMENT-SPEC.md
 ROADMAP.md
+
+# Local Repro project state (anchor pointer, standalone snapshot/event store)
+.repro/
