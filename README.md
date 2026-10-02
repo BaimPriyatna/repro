@@ -8,7 +8,7 @@
   <a href="https://github.com/BaimPriyatna/repro/actions/workflows/ci.yml"><img src="https://github.com/BaimPriyatna/repro/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache 2.0"></a>
   <a href="go.mod"><img src="https://img.shields.io/badge/go-%3E%3D1.24-00ADD8.svg" alt="Go 1.24+"></a>
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.1.5-informational.svg" alt="Version"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.1.6-informational.svg" alt="Version"></a>
   <img src="https://img.shields.io/badge/local--first-yes-success.svg" alt="Local-first">
 </p>
 
@@ -52,6 +52,41 @@ Error codes are documented in **[ERROR-CODES.md](./ERROR-CODES.md)**.
 
 ---
 
+## Installation
+
+### Go
+
+```bash
+go install github.com/BaimPriyatna/repro/cmd/repro@v1.0.0
+```
+
+### Linux & macOS
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/BaimPriyatna/repro/main/install.sh | sh
+```
+
+### Windows
+
+Run in PowerShell:
+
+```powershell
+irm https://raw.githubusercontent.com/BaimPriyatna/repro/main/install.ps1 | iex
+```
+
+### Manual installation
+
+1. Download the archive for your OS and architecture from [GitHub Releases](https://github.com/BaimPriyatna/repro/releases).
+2. Download `checksums.txt` from the same release.
+3. Verify the SHA-256 checksum:
+   - **Linux**: `sha256sum -c checksums.txt --ignore-missing`
+   - **macOS**: `shasum -a 256 -c checksums.txt --ignore-missing`
+   - **Windows**: `Get-FileHash .\repro_windows_amd64.zip -Algorithm SHA256`
+4. Extract the archive (`tar -xzf <archive>.tar.gz` or `Expand-Archive <archive>.zip`).
+5. Move the binary (`repro` or `repro.exe`) to a directory included in your `PATH`.
+
+---
+
 ## Important
 
 > [!IMPORTANT]
@@ -67,6 +102,7 @@ Error codes are documented in **[ERROR-CODES.md](./ERROR-CODES.md)**.
 
 - [Highlights](#highlights)
 - [Quick start](#quick-start)
+- [Installation](#installation)
 - [Important](#important)
 - [Architecture](#architecture)
 - [Modules (v1)](#modules-v1)
