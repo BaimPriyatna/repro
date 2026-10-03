@@ -1,6 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default defineConfig({
+export default withMermaid(
+  defineConfig({
   title: 'Repro',
   description: 'Local-first observability and diagnostic system for development environments',
   base: '/repro/',
@@ -115,5 +117,5 @@ export default defineConfig({
       pattern: 'https://github.com/BaimPriyatna/repro/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     }
-  }
-})
+  })
+)
