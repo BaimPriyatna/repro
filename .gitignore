@@ -22,3 +22,10 @@ ROADMAP.md
 
 # Local Repro project state (anchor pointer, standalone snapshot/event store)
 .repro/
+
+# Node / VitePress
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+package-lock.json
+

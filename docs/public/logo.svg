@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="24" fill="#0F172A"/>
+  <rect x="2" y="2" width="116" height="116" rx="22" stroke="#334155" stroke-width="2"/>
+  <!-- Terminal window control dots -->
+  <circle cx="24" cy="22" r="4.5" fill="#EF4444"/>
+  <circle cx="38" cy="22" r="4.5" fill="#F59E0B"/>
+  <circle cx="52" cy="22" r="4.5" fill="#10B981"/>
+  <!-- Terminal prompt: R> -->
+  <text x="20" y="82" font-family="'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace" font-size="52" font-weight="800" fill="#38BDF8" letter-spacing="-1">R<tspan fill="#10B981">&gt;</tspan></text>
+</svg>

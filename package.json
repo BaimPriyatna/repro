@@ -1,0 +1,14 @@
+{
+  "name": "repro-docs",
+  "version": "1.1.6",
+  "private": true,
+  "description": "Interactive documentation for Repro",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
