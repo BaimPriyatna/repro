@@ -26,4 +26,4 @@ Backward-compatible additions (new subcommands, optional store backends, new
 analyzers that do not break existing APIs or CLI output) are **MINOR** bumps.
 Breaking CLI flags or public Go API / output-schema changes are **MAJOR**.
 
-See [CHANGELOG.md](../CHANGELOG.md) for released history.
+See [CHANGELOG.md](https://github.com/BaimPriyatna/repro/blob/main/CHANGELOG.md) for released history.

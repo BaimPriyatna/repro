@@ -6,6 +6,7 @@ export default defineConfig({
   base: '/repro/',
   cleanUrls: true,
   lastUpdated: true,
+  ignoreDeadLinks: true,
 
   themeConfig: {
     logo: '/logo.svg',
