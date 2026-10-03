@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/BaimPriyatna/repro/actions/workflows/ci.yml"><img src="https://github.com/BaimPriyatna/repro/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://baimpriyatna.github.io/repro/"><img src="https://img.shields.io/badge/docs-online-blueviolet.svg" alt="Documentation"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache 2.0"></a>
   <a href="go.mod"><img src="https://img.shields.io/badge/go-%3E%3D1.24-00ADD8.svg" alt="Go 1.24+"></a>
   <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.1.6-informational.svg" alt="Version"></a>
@@ -14,7 +15,8 @@
 
 <p align="center">
   Capture state. Compare history. Trace evidence. Explain what broke.<br>
-  No cloud required for core diagnosis.
+  No cloud required for core diagnosis.<br><br>
+  <strong><a href="https://baimpriyatna.github.io/repro/">Documentation and Module Wiki</a></strong>
 </p>
 
 ---
@@ -49,6 +51,7 @@ make test
 
 Library usage (capture, compare, analyze) is in **[EXAMPLES.md](./EXAMPLES.md)**.
 Error codes are documented in **[ERROR-CODES.md](./ERROR-CODES.md)**.
+Documentation and module reference: **[baimpriyatna.github.io/repro](https://baimpriyatna.github.io/repro/)**.
 
 ---
 
