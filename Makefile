@@ -46,6 +46,16 @@ tidy:
 	go mod tidy
 	go mod verify
 
+## snapshot: run the full release pipeline locally without publishing
+## anything (goreleaser snapshot mode). Same build/archive/checksum steps as
+## the real release, so it catches config and cross-compile breakage locally.
+snapshot:
+	goreleaser release --snapshot --clean --skip=publish
+
+## release-check: validate .goreleaser.yml against the installed goreleaser
+release-check:
+	goreleaser check
+
 ## clean: remove build artifacts
 clean:
 	rm -rf $(OUT_DIR) coverage.out

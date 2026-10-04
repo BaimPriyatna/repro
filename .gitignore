@@ -3,6 +3,8 @@ bin/
 coverage.out
 *.test
 *.test.exe
+# GoReleaser output (builds, archives, checksums)
+dist/
 
 # Editor / OS
 .DS_Store

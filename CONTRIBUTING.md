@@ -104,6 +104,18 @@ follow the format of existing files (context, decision, consequences).
 See [`docs/VERSIONING.md`](./docs/VERSIONING.md). User-facing changes belong in
 [CHANGELOG.md](./CHANGELOG.md) under `[Unreleased]` until a release is cut.
 
+Releases are driven by pushing a `v*` tag, which runs GoReleaser from
+`.github/workflows/release.yml`. To rehearse that locally before tagging:
+
+```bash
+make release-check   # goreleaser check — validates .goreleaser.yml
+make snapshot        # full build/archive/checksum pipeline, publishes nothing
+```
+
+`make snapshot` cross-compiles all six targets, so it catches a broken
+`.goreleaser.yml` or a platform-specific build error without cutting a tag.
+Output lands in `dist/`, which is gitignored.
+
 ## Examples and docs
 
 - Library snippets: [EXAMPLES.md](./EXAMPLES.md)
