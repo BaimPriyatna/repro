@@ -62,6 +62,16 @@ Record changes or milestones as they happen:
 repro add event --type "dependency_update" --source "npm" --desc "Upgraded react from 18 to 19"
 ```
 
+Valid `--type` values: `FILE_CHANGED`, `PACKAGE_INSTALLED`, `PACKAGE_REMOVED`,
+`CONFIG_CHANGED`, `GIT_COMMIT`, `COMMAND_EXECUTED`, `RUNTIME_CHANGED`.
+Aliases like `dependency_update`, `config_changed`, `command_executed` are also accepted.
+
+Optionally link an event to a snapshot:
+
+```bash
+repro add event --type "command_executed" --desc "make build" --snapshot <snapshot-id>
+```
+
 Events are stored as temporal peers to snapshots, establishing timeline context for later analysis.
 
 ---
@@ -72,7 +82,7 @@ After modifying configs, installing tools, or when something starts behaving une
 
 ```bash
 repro capture --reason "after dependency bump"
-repro diff --before snap_a1b2c3d4e5f6 --after latest
+repro diff <snap-id-before> <snap-id-after>
 ```
 
 Repro reports:
@@ -80,10 +90,10 @@ Repro reports:
 - Removed entities
 - Modified entities with attribute-level diffs
 
-To check drift against the initial baseline:
+To check drift between two snapshots:
 
 ```bash
-repro drift
+repro drift <snap-id-baseline> <snap-id-current>
 ```
 
 ---
@@ -93,26 +103,7 @@ repro drift
 When a build or test fails, ask Repro to trace what broke based on prior evidence:
 
 ```bash
-repro why-broken --subject "node_modules"
-```
-
-Output:
-```text
-[ANALYSIS] WhyBroken Diagnostic Report
-Subject: node_modules
-Confidence: 0.92 | Severity: HIGH
-
-Evidence Chain:
-  [1] SNAPSHOT: snap_b2c3d4e5 (2026-10-02 14:15:00)
-      Node version changed from v20.11.0 to v22.0.0
-  [2] GRAPH: Depspy
-      Package 'native-binding-x' requires Node ABI <= 115
-  [3] EVENT: manual_trace
-      Binary compilation failed for native addon
-
-Conclusion:
-  Incompatible runtime ABI detected after Node.js version update.
-  Suggested resolution: Rebuild native dependencies with 'npm rebuild'
+repro why-broken --from <snap-id-before> --to <snap-id-after> --subject "node_modules"
 ```
 
 ---

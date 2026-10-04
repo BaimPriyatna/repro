@@ -64,10 +64,15 @@ var initCmd = &cobra.Command{
 }
 
 var addCmd = &cobra.Command{
-	Use:   "add <path>",
-	Short: "Add a known directory path to an initialized project",
-	Args:  cobra.ExactArgs(1),
+	Use:   "add",
+	Short: "Add a known directory path or record a development event",
+	Args:  cobra.MaximumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
+		// If called without a subcommand and with a path argument, behave as path-add.
+		if len(args) == 0 {
+			return errors.New(errors.CodeInvalidInput, "usage: repro add <path>  or  repro add event --type ... --desc ...")
+		}
+
 		cs, err := resolveCentralStore()
 		if err != nil {
 			return err
@@ -351,4 +356,7 @@ func init() {
 
 	migrateToCentralCmd.Flags().StringVar(&flagFromDir, "from-dir", "", "Source directory containing local .repro")
 	migrateToCentralCmd.Flags().StringVar(&flagName, "name", "", "Custom project name in central store")
+
+	// Register add subcommands.
+	addCmd.AddCommand(addEventCmd)
 }
